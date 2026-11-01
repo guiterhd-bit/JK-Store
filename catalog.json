@@ -1,0 +1,32 @@
+{
+  "apps": [
+    {
+      "name": "Ứng dụng mẫu 1",
+      "icon": "🎬",
+      "category": "YouTube",
+      "version": "1.0.0",
+      "size": "20 MB",
+      "url": "https://example.com/mau-1.apk",
+      "desc": "Thay mục này bằng ứng dụng thật của bạn.",
+      "favorite": true
+    },
+    {
+      "name": "Ứng dụng mẫu 2",
+      "icon": "📺",
+      "category": "Truyền Hình",
+      "version": "2.1.0",
+      "size": "35 MB",
+      "url": "https://example.com/mau-2.apk",
+      "desc": "Link phải tải thẳng ra file .apk."
+    },
+    {
+      "name": "Ứng dụng mẫu 3",
+      "icon": "🎤",
+      "category": "Giải Trí",
+      "version": "1.5.2",
+      "size": "50 MB",
+      "url": "https://example.com/mau-3.apk",
+      "desc": "Mỗi ứng dụng là một khối trong danh sách."
+    }
+  ]
+}

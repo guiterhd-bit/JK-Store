@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+html{font-size:2.3vh}
+*{box-sizing:border-box}
+body{margin:0;height:100vh;overflow:hidden;color:#fff1dc;font-family:Roboto,"Segoe UI",sans-serif;background:#170d07;position:relative}
+button{font-family:inherit;color:#fff1dc;border:0;background:none;padding:0;margin:0;outline:none}
+#bg{position:fixed;top:0;left:0;right:0;bottom:0;z-index:0;background:#170d07 url(bg_glass.jpg) center center/cover no-repeat}
+#app{position:relative;z-index:1;height:100vh;display:flex;flex-direction:column}
+
+/* ===== LIQUID GLASS: kính mờ trong suốt, viền sáng, ánh phản chiếu ===== */
+.brand,#tabs,.search,.rbtn,.htxt,.card{
+ background-color:rgba(255,226,180,.10);
+ background-image:linear-gradient(135deg,rgba(255,255,255,.24) 0%,rgba(255,255,255,.05) 36%,rgba(255,215,150,.06) 64%,rgba(255,255,255,.15) 100%),url(bg_glass_blur.jpg);
+ background-size:auto,cover;
+ background-position:0 0,center center;
+ background-repeat:no-repeat,no-repeat;
+ background-attachment:scroll,fixed;
+ border:1px solid rgba(255,238,205,.34);
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -1px 0 rgba(255,255,255,.12),inset 0 0 1.2rem rgba(255,230,190,.10),0 .7rem 1.8rem rgba(10,4,0,.38)}
+
+/* thanh trên */
+.top{display:flex;align-items:center;justify-content:space-between;padding:1.3rem 1.6rem 0}
+.brand{display:flex;align-items:center;border-radius:3rem;padding:.3rem 1rem .3rem .4rem;font-size:1.25rem;font-weight:bold;white-space:nowrap;color:#fff6e6}
+.brand img{width:2.3rem;height:2.3rem;margin-right:.5rem}
+.brand b{color:#ffd27a}
+#tabs{display:flex;border-radius:3rem;padding:.3rem}
+.tab{padding:.5rem .85rem;border-radius:3rem;font-size:1rem;font-weight:bold;color:rgba(255,241,220,.85);white-space:nowrap}
+.tab.on{background:linear-gradient(135deg,rgba(255,244,214,.92),rgba(246,189,92,.88) 55%,rgba(206,134,44,.9));color:#2b1608;box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 0 1rem rgba(255,190,90,.35)}
+.right{display:flex;align-items:center}
+.search{display:flex;align-items:center;border-radius:3rem;padding:0 .9rem;height:3rem;width:11rem;margin-right:.6rem}
+.search svg{width:1.15rem;height:1.15rem;margin-right:.5rem;flex:none}
+.search input{flex:1;min-width:0;background:none;border:0;outline:none;color:#fff1dc;font-size:1rem;font-family:inherit}
+.search input::-webkit-input-placeholder{color:rgba(255,241,220,.62)}
+.search input::placeholder{color:rgba(255,241,220,.62)}
+.search.f,.tab:focus,.rbtn:focus{box-shadow:0 0 0 .16rem #ffe3a6,0 0 1.2rem rgba(255,200,110,.55)}
+.rbtn{border-radius:50%;width:3rem;height:3rem;display:flex;align-items:center;justify-content:center}
+.rbtn svg{width:1.4rem;height:1.4rem}
+
+/* khu giới thiệu: một tấm kính lớn */
+#hero{flex:1;display:flex;align-items:center;padding:0 3rem;min-height:0}
+.htxt{max-width:68%;padding:1.2rem 2rem 1.3rem;border-radius:2rem}
+#hk{color:#ffd27a;font-weight:bold;letter-spacing:.3rem;font-size:1rem}
+#hn{margin:.4rem 0;font-size:3.2rem;line-height:1.1;font-weight:bold;color:#fff8ec;text-shadow:0 .1rem .8rem rgba(40,15,0,.45)}
+#hd{margin:0;font-size:1.35rem;color:rgba(255,241,220,.88);max-height:4.2rem;overflow:hidden}
+#hm{margin-top:.8rem;font-size:1.05rem;color:rgba(255,226,170,.75)}
+
+/* hàng thẻ */
+.rowtitle{display:flex;align-items:center;padding:0 3rem;font-size:1.6rem;font-weight:bold;margin-bottom:.7rem;color:#fff6e6}
+.star{display:flex;align-items:center;justify-content:center;width:1.9rem;height:1.9rem;background:linear-gradient(135deg,#fff0c8,#f2b550 55%,#c47f26);border-radius:.55rem;margin-right:.8rem;box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 0 .9rem rgba(255,190,90,.4)}
+.star svg{width:1.2rem;height:1.2rem}
+#row{position:relative;height:12rem;overflow:hidden;white-space:nowrap;padding:.4rem 0 1.3rem 3rem;margin-bottom:1rem}
+.card{display:inline-block;vertical-align:top;white-space:normal;width:15rem;height:10.3rem;margin-right:1.2rem;padding:.7rem;border-radius:1.5rem;text-align:left;overflow:hidden}
+.card:focus{border-color:#ffe3a6;background-color:rgba(255,214,140,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 0 0 .14rem #ffe3a6,0 0 1.6rem rgba(255,200,110,.55)}
+.cic{height:5rem;border-radius:1rem;background:rgba(255,255,255,.10);border:1px solid rgba(255,238,205,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:2.8rem;overflow:hidden}
+.cic img{width:auto;height:100%}
+.cn{margin-top:.5rem;font-size:1.25rem;font-weight:bold;color:#fff6e6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cd{font-size:.95rem;color:rgba(255,241,220,.7);height:2.4rem;overflow:hidden}
+
+/* nút cài đặt: kính vàng */
+#ibtn{margin-top:1.1rem;background:linear-gradient(135deg,rgba(255,246,222,.96),rgba(246,189,92,.92) 55%,rgba(200,128,40,.95));color:#2b1608;border-radius:3rem;padding:.8rem 2.8rem;font-size:1.3rem;font-weight:bold;display:none;border:1px solid rgba(255,244,214,.7);box-shadow:inset 0 1px 0 rgba(255,255,255,.85),0 .5rem 1.2rem rgba(60,25,0,.4),0 0 1.2rem rgba(255,190,90,.35)}
+#ibtn:focus{box-shadow:inset 0 1px 0 rgba(255,255,255,.85),0 0 0 .2rem #fff1c9,0 0 1.8rem rgba(255,200,110,.75)}
+#st{margin-top:.7rem;min-height:1.3rem;font-size:1rem;font-weight:bold;color:#ffe3a6}
+</style></head>
+<body>
+<div id="bg"></div>
+<div id="app">
+  <div class="top">
+    <div class="brand"><img src="logo.png" alt=""><span>Jaky <b>Store</b></span></div>
+    <div id="tabs"></div>
+    <div class="right"><div class="search" id="sbox"><svg viewBox="0 0 24 24" fill="none" stroke="#ffd27a" stroke-width="2.6" stroke-linecap="round"><circle cx="10" cy="10" r="6.5"/><path d="M15 15l6 6"/></svg><input id="q" type="text" placeholder="Tìm kiếm" autocomplete="off"></div><button id="refresh" class="rbtn" title="Làm mới"><svg viewBox="0 0 24 24" fill="none" stroke="#ffd27a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.4-5.7"/><path d="M20 4v5h-5"/></svg></button></div>
+  </div>
+  <div id="hero">
+    <div class="htxt">
+      <div id="hk">APP KHUYÊN DÙNG</div>
+      <h2 id="hn">Jaky Store</h2>
+      <p id="hd">Đang tải danh sách…</p>
+      <div id="hm"></div>
+      <button id="ibtn">Cài đặt</button>
+      <div id="st"></div>
+    </div>
+  </div>
+  <div class="rowtitle"><span class="star"><svg viewBox="0 0 24 24"><path fill="#1a1308" d="M12 2l3 6.5 7 .9-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.9z"/></svg></span><span id="rt">App khuyên dùng</span></div>
+  <div id="row"></div>
+</div>
+<script>
+var TABS=["Yêu Thích","YouTube","Truyền Hình","Thể Thao","Giải Trí","Tiện Ích","Android 5.1.1"],ALL=TABS[0],apps=[],cat=ALL,cur=null,lastCard=0,q="";
+function norm(s){s=String(s||"").toLowerCase();try{s=s.normalize("NFD").replace(/[\u0300-\u036f]/g,"")}catch(e){}return s.replace(/đ/g,"d")}
+function match(a,k){return norm(a.name+" "+(a.desc||"")+" "+(a.category||"")).indexOf(norm(k))>=0}
+function $(i){return document.getElementById(i)}
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function isImg(s){return /^https?:\/\//i.test(s||"")}
+function iconNode(a,cls){
+  var d=el("div",cls);
+  if(isImg(a.icon)){var im=document.createElement("img");im.src=a.icon;d.appendChild(im)}
+  else d.textContent=a.icon||"📱";
+  return d;
+}
+function meta(a){return [a.version&&"Phiên bản "+a.version,a.size].filter(Boolean).join("  •  ")}
+
+function msg(t){
+  $("hk").textContent="";$("hn").textContent="Jaky Store";$("hd").textContent=t;$("hm").textContent="";
+  $("ibtn").style.display="none";$("st").textContent="";
+}
+function setStatus(t){$("st").textContent=t}
+function install(a){
+  if(window.Android&&a&&/^https?:\/\//i.test(a.url||"")){Android.install(a.url,a.name||"ứng dụng")}
+  else setStatus("Mục này chưa có link tải hợp lệ.");
+}
+
+function show(a){
+  if(a!==cur)$("st").textContent="";
+  cur=a;
+  $("ibtn").style.display="inline-block";
+  $("hk").textContent=(q?"KẾT QUẢ TÌM KIẾM":(cat===ALL?"APP YÊU THÍCH":cat.toUpperCase()));
+  $("hn").textContent=a.name||"";
+  $("hd").textContent=a.desc||"";
+  $("hm").textContent=meta(a);
+}
+
+function topList(){
+  var r=[],t=$("tabs").children;
+  for(var i=0;i<t.length;i++)r.push(t[i]);
+  r.push($("q"));r.push($("refresh"));
+  return r;
+}
+function cardList(){var r=[],c=$("row").children;for(var i=0;i<c.length;i++)r.push(c[i]);return r}
+
+function renderRow(){
+  var row=$("row");row.innerHTML="";row.scrollLeft=0;lastCard=0;
+  $("rt").textContent=(q?"Kết quả cho “"+q+"”":(cat===ALL?"App yêu thích":cat));
+  var list=apps.filter(function(a){return q?match(a,q):(cat===ALL?true:norm(a.category)===norm(cat))});
+  if(!q&&cat===ALL){var fav=list.filter(function(a){return a.favorite===true});if(fav.length)list=fav}
+  if(!list.length){msg(q?"Không tìm thấy ứng dụng phù hợp.":"Chưa có ứng dụng nào trong mục này.");return}
+  list.forEach(function(a,idx){
+    var c=el("button","card");
+    c.appendChild(iconNode(a,"cic"));
+    c.appendChild(el("div","cn",a.name||""));
+    c.appendChild(el("div","cd",a.desc||""));
+    c.onfocus=function(){
+      lastCard=idx;show(a);
+      row.scrollLeft=c.offsetLeft-(row.clientWidth-c.offsetWidth)/2;
+    };
+    c.onclick=function(){install(a)};
+    row.appendChild(c);
+  });
+  show(list[0]);
+}
+
+function build(){
+  var cats=TABS;
+  if(cats.indexOf(cat)<0)cat=ALL;
+  var box=$("tabs");box.innerHTML="";
+  cats.forEach(function(c){
+    var b=el("button","tab"+(c===cat?" on":""),c);
+    b.onclick=function(){
+      cat=c;q="";$("q").value="";
+      var all=box.children;
+      for(var i=0;i<all.length;i++)all[i].className="tab"+(all[i]===b?" on":"");
+      renderRow();
+    };
+    box.appendChild(b);
+  });
+  renderRow();
+  var f=$("row").children[0];if(f)f.focus();
+}
+
+$("ibtn").onclick=function(){install(cur)};
+$("q").oninput=function(){q=this.value.trim();renderRow()};
+$("q").onfocus=function(){$("sbox").className="search f"};
+$("q").onblur=function(){$("sbox").className="search"};
+$("refresh").onclick=function(){msg("Đang tải danh sách…");if(window.Android)Android.loadCatalog()};
+function onCatalog(text){
+  try{apps=JSON.parse(text).apps||[]}catch(e){msg("File catalog.json bị sai định dạng.");return}
+  build();
+}
+function onCatalogError(m){msg("Không tải được danh sách: "+m)}
+
+/* điều khiển bằng phím mũi tên của remote */
+document.addEventListener("keydown",function(e){
+  var k=e.keyCode,L=k===37,U=k===38,R=k===39,D=k===40;
+  var a=document.activeElement,top=topList(),cards=cardList();
+  if(k===13&&a===$("q")){if(cards.length)cards[0].focus();return}
+  if(!(L||U||R||D))return;
+  if(a===$("q")){
+    if(L&&a.selectionStart>0)return;
+    if(R&&a.selectionEnd<a.value.length)return;
+  }
+  var ti=top.indexOf(a),ci=cards.indexOf(a);
+  e.preventDefault();
+  var ib=$("ibtn"),ibOn=ib.style.display!=="none";
+  var onTab=$("tabs").querySelector(".tab.on")||top[0];
+  var cardFocus=function(){if(cards.length)cards[Math.min(lastCard,cards.length-1)].focus()};
+  if(ti>=0){
+    if(L&&ti>0)top[ti-1].focus();
+    else if(R&&ti<top.length-1)top[ti+1].focus();
+    else if(D){if(ibOn)ib.focus();else cardFocus()}
+  }else if(a===ib){
+    if(U)onTab.focus();
+    else if(D)cardFocus();
+  }else if(ci>=0){
+    if(L&&ci>0)cards[ci-1].focus();
+    else if(R&&ci<cards.length-1)cards[ci+1].focus();
+    else if(U){if(ibOn)ib.focus();else onTab.focus()}
+  }else{
+    if(cards.length)cards[0].focus();else top[0].focus();
+  }
+});
+
+if(window.Android){Android.loadCatalog()}else{msg("Chạy ngoài ứng dụng Android.")}
+</script>
+</body></html>
