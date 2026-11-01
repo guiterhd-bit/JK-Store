@@ -7,8 +7,7 @@
       "version": "2.0.3",
       "size": "77 MB",
       "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/TizenTube.apk",
-      "desc": "Youtube Block Ads",
-      "favorite": true
+      "desc": "Youtube Block Ads"
     },
     {
       "name": "YouTube Mod",
@@ -17,7 +16,8 @@
       "version": "1.0.8",
       "size": "16 MB",
       "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/youtube.apk",
-      "desc": "Youtube Block Ads"
+      "desc": "Youtube Block Ads",
+      "favorite": true
     },
     {
       "name": "Ứng dụng mẫu 3",
