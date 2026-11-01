@@ -2,22 +2,22 @@
   "apps": [
     {
       "name": "Tizen Tube",
-      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/Tizen.png",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/Tizentube.png",
       "category": "YouTube",
       "version": "2.0.3",
-      "size": " MB",
+      "size": "77 MB",
       "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/TizenTube.apk",
       "desc": "Youtube Block Ads",
       "favorite": true
     },
     {
-      "name": "Ứng dụng mẫu 2",
-      "icon": "📺",
-      "category": "Truyền Hình",
-      "version": "2.1.0",
-      "size": "35 MB",
-      "url": "https://example.com/mau-2.apk",
-      "desc": "Link phải tải thẳng ra file .apk."
+      "name": "YouTube Mod",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/Youtube.png",
+      "category": "YouTube",
+      "version": "1.0.8",
+      "size": "16 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/youtube.apk",
+      "desc": "Youtube Block Ads"
     },
     {
       "name": "Ứng dụng mẫu 3",
