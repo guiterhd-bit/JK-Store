@@ -1,13 +1,13 @@
 {
   "apps": [
     {
-      "name": "Ứng dụng mẫu 1",
-      "icon": "🎬",
+      "name": "Tizen Tube",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/Tizen.png",
       "category": "YouTube",
-      "version": "1.0.0",
-      "size": "20 MB",
-      "url": "https://example.com/mau-1.apk",
-      "desc": "Thay mục này bằng ứng dụng thật của bạn.",
+      "version": "2.0.3",
+      "size": " MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/TizenTube.apk",
+      "desc": "Youtube Block Ads",
       "favorite": true
     },
     {
