@@ -1,22 +1,22 @@
 {
   "apps": [
     {
-      "name": "Tizen Tube",
+      "name": "TizenTube",
       "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/Tizentube.png",
       "category": "YouTube",
       "version": "2.0.3",
       "size": "77 MB",
       "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/TizenTube.apk",
-      "desc": "Youtube Block Ads"
+      "desc": "Youtube Chặn Quảng Cáo"
     },
     {
-      "name": "YouTube Mod",
+      "name": "YouTube Cho TV Nội Địa",
       "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/Youtube.png",
       "category": "YouTube",
       "version": "1.0.8",
       "size": "16 MB",
       "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/youtube.apk",
-      "desc": "Youtube Block Ads",
+      "desc": "Youtube Chặn Quảng Cáo",
       "favorite": true
     },
     {
