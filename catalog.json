@@ -10,7 +10,7 @@
       "desc": "Youtube Chặn Quảng Cáo"
     },
     {
-      "name": "YouTube Cho TV Nội Địa",
+      "name": "YouTube TV Nội Địa",
       "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/Youtube.png",
       "category": "YouTube",
       "version": "1.0.8",
@@ -18,15 +18,34 @@
       "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/youtube.apk",
       "desc": "Youtube Chặn Quảng Cáo",
       "favorite": true
+    }
+    {
+      "name": "YouTube 5.1.1",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/Youtube.png",
+      "category": "YouTube",
+      "version": "1.0,3",
+      "size": "15 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/youtube-adr5-6.apk",
+      "desc": "Youtube Chặn Quảng Cáo"
     },
     {
-      "name": "Ứng dụng mẫu 3",
-      "icon": "🎤",
-      "category": "Giải Trí",
-      "version": "1.5.2",
-      "size": "50 MB",
-      "url": "https://example.com/mau-3.apk",
-      "desc": "Mỗi ứng dụng là một khối trong danh sách."
+      "name": "SmartTube",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/smarttube.png",
+      "category": "YouTube",
+      "version": "32.68",
+      "size": "34 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/smarttube.apk",
+      "desc": "Youtube Chặn Quảng Cáo"
+    },
+    {
+      "name": "T34 TV",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/t34.png",
+      "category": "Truyền Hình",
+      "version": "1.0.3",
+      "size": "10.5 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/t34.png",
+      "desc": "Truyền hình trực tiếp"
+    },
     }
   ]
 }
