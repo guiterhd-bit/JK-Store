@@ -2,6 +2,11 @@ plugins {
     id 'com.android.application'
 }
 
+// Số phiên bản tự tăng mỗi lần GitHub build (VERSION_CODE do workflow truyền vào)
+def vcode = (System.getenv("VERSION_CODE") ?: "1").toInteger()
+// Khóa ký cố định (lấy từ GitHub Secrets) để các bản build cài đè lên nhau được
+def ksPass = System.getenv("KS_PASSWORD")
+
 android {
     namespace 'com.jks.store'
     compileSdk 34
@@ -10,8 +15,20 @@ android {
         applicationId "com.jks.store"
         minSdk 22            // Android 5.1.1 trở lên
         targetSdk 34
-        versionCode 1
-        versionName "1.0"
+        versionCode vcode
+        versionName "1.0.${vcode}"
+    }
+
+    signingConfigs {
+        if (ksPass) {
+            release {
+                storeFile file(System.getenv("KS_FILE"))
+                storeType "pkcs12"
+                storePassword ksPass
+                keyAlias System.getenv("KEY_ALIAS")
+                keyPassword System.getenv("KEY_PASSWORD")
+            }
+        }
     }
 
     buildTypes {
@@ -19,6 +36,7 @@ android {
             // Thu nhỏ mã và tài nguyên cho nhẹ; vẫn ký bằng khóa debug để cài trực tiếp
             debuggable false
             minifyEnabled true
+            if (ksPass) signingConfig signingConfigs.release
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
