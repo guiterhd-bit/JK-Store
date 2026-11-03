@@ -102,6 +102,51 @@
       "desc": "Stream IPTV Android 5 - 6"
     },
     {
+      "name": "VTV Go",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/vtvgo.png",
+      "category": "Truyền Hình",
+      "version": "12.10.28",
+      "size": "7,6 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/vtvgo.apk",
+      "desc": "Truyền Hình Việt Nam"
+    },
+    {
+      "name": "VTV Prime",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/vtvprime.png",
+      "category": "Truyền Hình",
+      "version": "2.0.0",
+      "size": "19,1 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/vtvprime.apk",
+      "desc": "Truyền Hình VTVCab"
+    },
+    {
+      "name": "TV360",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/TV360.png",
+      "category": "Truyền Hình",
+      "version": "6.3.1",
+      "size": "57,5 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/TV360.apk",
+      "desc": "Truyền Hình Viettel"
+    },
+    {
+      "name": "MyTV",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/mytv.png",
+      "category": "Truyền Hình",
+      "version": "4.67.0",
+      "size": "56 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/mytv.apk",
+      "desc": "Truyền Hình VNPT"
+    },
+    {
+      "name": "FPT Play",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/FPTplay.png",
+      "category": "Truyền Hình",
+      "version": "7.34.13",
+      "size": "61,9 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/fptplay.apk",
+      "desc": "Truyền Hình FPT"
+    },
+    {
       "name": "YouTube 5.1.1",
       "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/Youtube.png",
       "category": "Android 5.1.1",
