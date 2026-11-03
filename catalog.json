@@ -81,7 +81,7 @@
       "version": "1.0",
       "size": "2,2 MB",
       "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/mihdtv56.apk",
-      "desc": "Truyền hình cho Android 5 - 6"
+      "desc": "Hỗ trợ Android 5 - 6"
     },
     {
       "name": "SuperOK Player",
@@ -96,6 +96,33 @@
       "name": "M3U Player",
       "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/M3u.png",
       "category": "Truyền Hình",
+      "version": "3.0.11",
+      "size": "10,5 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/m3u.apk",
+      "desc": "Stream IPTV Android 5 - 6"
+    },
+    {
+      "name": "YouTube 5.1.1",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/Youtube.png",
+      "category": "Android 5.1.1",
+      "version": "1.0,3",
+      "size": "15 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/youtube-adr5-6.apk",
+      "desc": "Youtube Chặn Quảng Cáo"
+    },
+    {
+      "name": "MiHD TV",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/mihdtv56.png",
+      "category": "Android 5.1.1",
+      "version": "1.0",
+      "size": "2,2 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/mihdtv56.apk",
+      "desc": "Hỗ trợ Android 5 - 6"
+    },
+    {
+      "name": "M3U Player",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/M3u.png",
+      "category": "Android 5.1.1",
       "version": "3.0.11",
       "size": "10,5 MB",
       "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/m3u.apk",
