@@ -46,6 +46,24 @@
       "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/t34tv.apk",
       "desc": "Truyền hình trực tiếp",
       "favorite": true
+    },
+    {
+      "name": "ViệtMi TV",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/vietmitv.png",
+      "category": "Truyền Hình",
+      "version": "v22",
+      "size": "2,2 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/vietmitv.apk",
+      "desc": "Truyền hình trực tiếp"
+    },
+    {
+      "name": "SmartTube",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/smarttube.png",
+      "category": "YouTube",
+      "version": "32.68",
+      "size": "34 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/smarttube.apk",
+      "desc": "Truyền hình trực tiếp"
     }
   ]
 }
