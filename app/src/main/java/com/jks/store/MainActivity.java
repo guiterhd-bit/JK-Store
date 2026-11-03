@@ -1,6 +1,10 @@
 package com.jks.store;
 
 import android.app.Activity;
+import android.app.UiModeManager;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
@@ -8,6 +12,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.provider.Settings;
+import android.view.View;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -44,6 +49,21 @@ public class MainActivity extends Activity {
         web.loadUrl("file:///android_asset/index.html");
         setContentView(web);
         web.requestFocus();
+    }
+
+    /** Ẩn thanh trạng thái/thanh điều hướng để giao diện phủ kín màn hình (điện thoại). */
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus && Build.VERSION.SDK_INT >= 19) {
+            getWindow().getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        }
     }
 
     private void js(final String code) {
@@ -141,6 +161,17 @@ public class MainActivity extends Activity {
     }
 
     private class Bridge {
+
+        /** true nếu là điện thoại/máy tính bảng cảm ứng (không phải TV hay TV box). */
+        @JavascriptInterface
+        public boolean isPhone() {
+            UiModeManager um = (UiModeManager) getSystemService(Context.UI_MODE_SERVICE);
+            boolean tv = um != null && um.getCurrentModeType() == Configuration.UI_MODE_TYPE_TELEVISION;
+            PackageManager pm = getPackageManager();
+            boolean leanback = pm.hasSystemFeature("android.software.leanback");
+            boolean touch = pm.hasSystemFeature(PackageManager.FEATURE_TOUCHSCREEN);
+            return touch && !tv && !leanback;
+        }
 
         @JavascriptInterface
         public void loadCatalog() {
