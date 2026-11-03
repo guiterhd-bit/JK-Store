@@ -3,7 +3,14 @@ name: Build APK
 on:
   push:
     branches: [ main, master ]
+    paths-ignore:
+      - 'catalog.json'
+      - 'icons/**'
+      - '**.md'
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -20,10 +27,34 @@ jobs:
         with:
           gradle-version: '8.7'
 
-      - name: Build debug APK
+      - name: Giải mã khóa ký
+        run: |
+          if [ -z "${{ secrets.KEYSTORE_BASE64 }}" ]; then
+            echo "THIẾU SECRET KEYSTORE_BASE64. Hãy làm theo file thông tin khóa ký." ; exit 1
+          fi
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > "$RUNNER_TEMP/jaky.p12"
+
+      - name: Build APK
+        env:
+          KS_FILE: ${{ runner.temp }}/jaky.p12
+          KS_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+          VERSION_CODE: ${{ github.run_number }}
         run: gradle assembleDebug --no-daemon
+
+      - name: Đặt tên file APK
+        run: cp app/build/outputs/apk/debug/app-debug.apk JakyStore.apk
 
       - uses: actions/upload-artifact@v4
         with:
-          name: JakyStore-apk
-          path: app/build/outputs/apk/debug/*.apk
+          name: KhoAppTV-apk
+          path: JakyStore.apk
+
+      - name: Phát hành bản mới (để ứng dụng tự cập nhật)
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: build-${{ github.run_number }}
+          name: Jaky Store 1.0.${{ github.run_number }}
+          files: JakyStore.apk
+          make_latest: true
