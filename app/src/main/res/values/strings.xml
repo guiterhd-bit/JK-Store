@@ -2,5 +2,7 @@
 <resources>
     <string name="app_name">Jaky Store</string>
     <!-- SỬA DÒNG DƯỚI: dán link "raw" của file catalog.json -->
-    <string name="catalog_url" translatable="false">https://raw.githubusercontent.com/guiterhd-bit/JaKy.Store/refs/heads/main/catalog.json</string>
+    <string name="catalog_url" translatable="false">https://raw.githubusercontent.com/guiterhd-bit/JkL-Store/main/catalog.json</string>
+    <!-- Địa chỉ kiểm tra bản cập nhật của ứng dụng (GitHub Releases) -->
+    <string name="update_api_url" translatable="false">https://api.github.com/repos/guiterhd-bit/JkL-Store/releases/latest</string>
 </resources>
