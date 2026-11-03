@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Jaky Store</string>
+    <string name="app_name">JK Store</string>
     <!-- SỬA DÒNG DƯỚI: dán link "raw" của file catalog.json -->
     <string name="catalog_url" translatable="false">https://raw.githubusercontent.com/guiterhd-bit/JaKy.Store/main/catalog.json</string>
     <!-- Địa chỉ kiểm tra bản cập nhật của ứng dụng (GitHub Releases) -->
