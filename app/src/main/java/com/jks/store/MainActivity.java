@@ -20,6 +20,7 @@ import android.webkit.WebViewClient;
 
 import androidx.core.content.FileProvider;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
@@ -183,6 +184,37 @@ public class MainActivity extends Activity {
                         js("onCatalog(" + JSONObject.quote(text) + ")");
                     } catch (Exception e) {
                         js("onCatalogError(" + JSONObject.quote(String.valueOf(e.getMessage())) + ")");
+                    }
+                }
+            }).start();
+        }
+
+        /** Hỏi GitHub Releases xem có bản mới hơn bản đang cài không. */
+        @JavascriptInterface
+        public void checkUpdate() {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        int current = getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
+                        JSONObject o = new JSONObject(readText(getString(R.string.update_api_url)));
+                        String tag = o.optString("tag_name", "").replaceAll("[^0-9]", "");
+                        if (tag.length() == 0) return;
+                        int latest = Integer.parseInt(tag);
+                        if (latest <= current) return;
+                        JSONArray assets = o.getJSONArray("assets");
+                        String url = null;
+                        for (int i = 0; i < assets.length(); i++) {
+                            JSONObject a = assets.getJSONObject(i);
+                            if (a.optString("name", "").endsWith(".apk")) {
+                                url = a.getString("browser_download_url");
+                                break;
+                            }
+                        }
+                        if (url == null) return;
+                        js("onUpdate(" + latest + "," + JSONObject.quote(url) + ")");
+                    } catch (Exception ignored) {
+                        // không có mạng hoặc chưa có bản phát hành: bỏ qua, không báo lỗi
                     }
                 }
             }).start();
