@@ -147,6 +147,114 @@
       "desc": "Truyền Hình FPT"
     },
     {
+      "name": "Get Out",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/getout.png",
+      "category": "Thể Thao",
+      "version": "V.I.P",
+      "size": "14,6 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/getout.apk",
+      "desc": "Bóng Đá Nhà Cái"
+    },
+    {
+      "name": "Lậu TV",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/LauTV.png",
+      "category": "Thể Thao",
+      "version": "0.7",
+      "size": "26,1 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/LauTV.apk",
+      "desc": "Bóng Đá Nhà Cái"
+    },
+    {
+      "name": "SportzX",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/sportzx.png",
+      "category": "Thể Thao",
+      "version": "3.2",
+      "size": "19,9 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/spzx.apk",
+      "desc": "Thể Thao Quốc Tế"
+    },
+    {
+      "name": "Crexify TV",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/crexify.png",
+      "category": "Thể Thao",
+      "version": "4.3",
+      "size": "11,1 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/CrexiFyTV.apk",
+      "desc": "Thể Thao Quốc Tế"
+    },
+    {
+      "name": "Phim 4K",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/phim4k.png",
+      "category": "Giải Trí",
+      "version": "2.7.3",
+      "size": "13,4 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/phim4k.apk",
+      "desc": "Rạp Phim Miễn Phí"
+    },
+    {
+      "name": "Sài Gòn Phim",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/saigonphim.png",
+      "category": "Giải Trí",
+      "version": "1.7",
+      "size": "64,5 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/SaiGonPhim.apk",
+      "desc": "Rạp Phim Miễn Phí"
+    },
+    {
+      "name": "Chợ Phim",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/chophim.png",
+      "category": "Giải Trí",
+      "version": "1.1.0",
+      "size": "3,6 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/chophim.apk",
+      "desc": "Rạp Phim Miễn Phí"
+    },
+    {
+      "name": "Mê Phim",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/mephim.png",
+      "category": "Giải Trí",
+      "version": "1.0.1",
+      "size": "9,6 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/MePhimTV.apk",
+      "desc": "Rạp Phim Miễn Phí"
+    },
+    {
+      "name": "Netflix TV",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/Netflix.png",
+      "category": "Giải Trí",
+      "version": "8.121.2",
+      "size": "70,4 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/netflix.apk",
+      "desc": "Cắm chuột để dùng"
+    },
+    {
+      "name": "Tiktok Lite",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/tiktok.png",
+      "category": "Giải Trí",
+      "version": "39.9.3",
+      "size": "26,5 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/tiktoklite.apk",
+      "desc": "Tiktok Android TV"
+    },
+    {
+      "name": "Vxm Karaoke",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/vxm-karaoke.png",
+      "category": "Giải Trí",
+      "version": "1.2.1",
+      "size": "2 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/vxmkaraoke.apk",
+      "desc": "Karaoke TV"
+    },
+    {
+      "name": "Net Karaoke",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/netkaraoke.png",
+      "category": "Giải Trí",
+      "version": "1.0.10",
+      "size": "7,3 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/net-karaoke.apk",
+      "desc": "Karaoke TV"
+    },
+    {
       "name": "YouTube 5.1.1",
       "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/Youtube.png",
       "category": "Android 5.1.1",
@@ -172,15 +280,6 @@
       "size": "10,5 MB",
       "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/m3u.apk",
       "desc": "Stream IPTV Android 5 - 6"
-    },
-    {
-      "name": "SmartTube",
-      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/smarttube.png",
-      "category": "YouTube",
-      "version": "32.68",
-      "size": "34 MB",
-      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/smarttube.apk",
-      "desc": "Truyền hình trực tiếp"
     }
   ]
 }
