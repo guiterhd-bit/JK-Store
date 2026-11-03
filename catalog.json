@@ -154,6 +154,7 @@
       "size": "14,6 MB",
       "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/getout.apk",
       "desc": "Bóng Đá Nhà Cái"
+      "favorite": true
     },
     {
       "name": "Lậu TV",
@@ -163,6 +164,7 @@
       "size": "26,1 MB",
       "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/LauTV.apk",
       "desc": "Bóng Đá Nhà Cái"
+      "favorite": true
     },
     {
       "name": "SportzX",
@@ -190,6 +192,7 @@
       "size": "13,4 MB",
       "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/phim4k.apk",
       "desc": "Rạp Phim Miễn Phí"
+      "favorite": true
     },
     {
       "name": "Sài Gòn Phim",
@@ -235,6 +238,7 @@
       "size": "26,5 MB",
       "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/tiktoklite.apk",
       "desc": "Tiktok Android TV"
+      "favorite": true
     },
     {
       "name": "Vxm Karaoke",
@@ -244,6 +248,7 @@
       "size": "2 MB",
       "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/vxmkaraoke.apk",
       "desc": "Karaoke TV"
+      "favorite": true
     },
     {
       "name": "Net Karaoke",
