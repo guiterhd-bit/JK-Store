@@ -255,6 +255,105 @@
       "desc": "Karaoke TV"
     },
     {
+      "name": "Mstore 2",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/Mstore2.png",
+      "category": "Tiện Ích",
+      "version": "2.0.0",
+      "size": "12,6 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/mstore.apk",
+      "desc": "Kho ứng dụng TV"
+    },
+    {
+      "name": "DL Store",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/dlstore.png",
+      "category": "Tiện Ích",
+      "version": "16.0.5",
+      "size": "5,3 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/DLStore.apk",
+      "desc": "Kho ứng dụng TV"
+    },
+    {
+      "name": "Xiaomi Store",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/smihome.png",
+      "category": "Tiện Ích",
+      "version": "1.2",
+      "size": "3,6 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/SMihomeStore.apk",
+      "desc": "Kho ứng dụng TV"
+    },
+    {
+      "name": "Vxm Store",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/vietstore.png",
+      "category": "Tiện Ích",
+      "version": "1.3.0",
+      "size": "368 KB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/vxmstore.apk",
+      "desc": "Kho ứng dụng TV"
+    },
+    {
+      "name": "Beecube Store",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/beecube.png",
+      "category": "Tiện Ích",
+      "version": "3.1",
+      "size": "7,1 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/Beecube.apk",
+      "desc": "Kho ứng dụng TV"
+    },
+    {
+      "name": "Bluetooth Scanner",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/bluetooth.png",
+      "category": "Tiện Ích",
+      "version": "2.0",
+      "size": "2,8 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/BluetoothScanner.apk",
+      "desc": "Quét thiết bị Bluetooth"
+    },
+    {
+      "name": "Cốc Cốc",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/coccoc.png",
+      "category": "Tiện Ích",
+      "version": "119.4.199",
+      "size": "86,2 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/coccoc.apk",
+      "desc": "Trình duyệt Website"
+    },
+    {
+      "name": "Imou TV",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/Imou.png",
+      "category": "Tiện Ích",
+      "version": "1.2.9",
+      "size": "71,9 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/imou.apk",
+      "desc": "Camera An Ninh"
+    },
+    {
+      "name": "Yoosee TV",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/Yoosee.png",
+      "category": "Tiện Ích",
+      "version": "46.06.17",
+      "size": "129,6 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/yoosee.apk",
+      "desc": "Camera An Ninh"
+    },
+    {
+      "name": "HIK Connect TV",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/HikConnect.png",
+      "category": "Tiện Ích",
+      "version": "5.1.3",
+      "size": "175,3 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/HikConnect.apk",
+      "desc": "Camera An Ninh"
+    },
+    {
+      "name": "Ezviz TV",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/Ezviz.png",
+      "category": "Tiện Ích",
+      "version": "1.1.1.04",
+      "size": "87,1 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/ezviz.apk",
+      "desc": "Camera An Ninh"
+    },
+    {
       "name": "YouTube 5.1.1",
       "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/Youtube.png",
       "category": "Android 5.1.1",
