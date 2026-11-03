@@ -108,14 +108,14 @@ html.phone{font-size:2.9vh}
 <button id="upd"><span>Có bản mới <b id="updv"></b></span><i>Cập nhật ngay</i></button>
 <div id="app">
   <div class="top">
-    <div class="brand"><img src="logo.png" alt=""><span>Jaky <b>Store</b></span></div>
+    <div class="brand"><img src="logo.png" alt=""><span>JK <b>Store</b></span></div>
     <div id="tabs"></div>
     <div class="right"><div class="search" id="sbox"><svg viewBox="0 0 24 24" fill="none" stroke="#ffd27a" stroke-width="2.6" stroke-linecap="round"><circle cx="10" cy="10" r="6.5"/><path d="M15 15l6 6"/></svg><input id="q" type="text" placeholder="Tìm kiếm" autocomplete="off"></div><button id="refresh" class="rbtn" title="Làm mới"><svg viewBox="0 0 24 24" fill="none" stroke="#ffd27a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.4-5.7"/><path d="M20 4v5h-5"/></svg></button></div>
   </div>
   <div id="hero">
     <div class="htxt">
       <div id="hk">APP KHUYÊN DÙNG</div>
-      <h2 id="hn">Jaky Store</h2>
+      <h2 id="hn">JK Store</h2>
       <p id="hd">Đang tải danh sách…</p>
       <div id="hm"></div>
       <button id="ibtn">Cài đặt</button>
@@ -145,7 +145,7 @@ function iconNode(a,cls){
 function meta(a){return [a.version&&"Phiên bản "+a.version,a.size].filter(Boolean).join("  •  ")}
 
 function msg(t){
-  $("hk").textContent="";$("hn").textContent="Jaky Store";$("hd").textContent=t;$("hm").textContent="";
+  $("hk").textContent="";$("hn").textContent="JK Store";$("hd").textContent=t;$("hm").textContent="";
   $("ibtn").style.display="none";$("st").textContent="";
 }
 function setStatus(t){$("st").textContent=t}
@@ -214,7 +214,7 @@ function build(){
 $("ibtn").onclick=function(){install(cur)};
 var updUrl="";
 function onUpdate(code,url){updUrl=url;$("updv").textContent="1.0."+code;$("upd").style.display="block"}
-$("upd").onclick=function(){if(updUrl&&window.Android)Android.install(updUrl,"Jaky Store")};
+$("upd").onclick=function(){if(updUrl&&window.Android)Android.install(updUrl,"JK Store")};
 $("q").oninput=function(){q=this.value.trim();renderRow()};
 $("q").onfocus=function(){$("sbox").className="search f"};
 $("q").onblur=function(){$("sbox").className="search"};
