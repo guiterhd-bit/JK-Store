@@ -48,7 +48,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: KhoAppTV-apk
+          name: JakyStore-apk
           path: JakyStore.apk
 
       - name: Phát hành bản mới (để ứng dụng tự cập nhật)
