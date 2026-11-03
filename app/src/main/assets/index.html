@@ -91,9 +91,21 @@ html.phone{font-size:2.9vh}
 .phone .cn{font-size:1.05rem;margin-top:.35rem}
 .phone .cd{font-size:.85rem;height:1.2rem}
 @media (max-width:820px){.phone .brand span{display:none}.phone .brand{padding:.25rem}.phone .brand img{margin-right:0}}
+
+/* thông báo cập nhật ứng dụng */
+#upd{display:none;position:absolute;z-index:4;right:3rem;top:6.4rem;padding:.6rem 1.2rem;border-radius:3rem;text-align:left;
+ background:linear-gradient(135deg,rgba(255,246,222,.96),rgba(246,189,92,.92) 55%,rgba(200,128,40,.95));color:#2b1608;
+ border:1px solid rgba(255,244,214,.7);box-shadow:inset 0 1px 0 rgba(255,255,255,.85),0 .5rem 1.2rem rgba(60,25,0,.4),0 0 1.2rem rgba(255,190,90,.35)}
+#upd span{display:block;font-size:.95rem;font-weight:bold}
+#upd i{display:block;font-size:.85rem;font-style:normal;opacity:.8}
+#upd:focus{box-shadow:inset 0 1px 0 rgba(255,255,255,.85),0 0 0 .2rem #fff1c9,0 0 1.8rem rgba(255,200,110,.75)}
+.phone #upd{right:1.2rem;top:4.2rem;padding:.4rem .9rem}
+.phone #upd span{font-size:.85rem}
+.phone #upd i{font-size:.75rem}
 </style></head>
 <body>
 <div id="bg"></div>
+<button id="upd"><span>Có bản mới <b id="updv"></b></span><i>Cập nhật ngay</i></button>
 <div id="app">
   <div class="top">
     <div class="brand"><img src="logo.png" alt=""><span>Jaky <b>Store</b></span></div>
@@ -200,6 +212,9 @@ function build(){
 }
 
 $("ibtn").onclick=function(){install(cur)};
+var updUrl="";
+function onUpdate(code,url){updUrl=url;$("updv").textContent="1.0."+code;$("upd").style.display="block"}
+$("upd").onclick=function(){if(updUrl&&window.Android)Android.install(updUrl,"Jaky Store")};
 $("q").oninput=function(){q=this.value.trim();renderRow()};
 $("q").onfocus=function(){$("sbox").className="search f"};
 $("q").onblur=function(){$("sbox").className="search"};
@@ -223,15 +238,21 @@ document.addEventListener("keydown",function(e){
   var ti=top.indexOf(a),ci=cards.indexOf(a);
   e.preventDefault();
   var ib=$("ibtn"),ibOn=ib.style.display!=="none";
+  var up=$("upd"),upOn=up.style.display==="block";
   var onTab=$("tabs").querySelector(".tab.on")||top[0];
   var cardFocus=function(){if(cards.length)cards[Math.min(lastCard,cards.length-1)].focus()};
   if(ti>=0){
     if(L&&ti>0)top[ti-1].focus();
     else if(R&&ti<top.length-1)top[ti+1].focus();
-    else if(D){if(ibOn)ib.focus();else cardFocus()}
+    else if(D){if(ibOn)ib.focus();else if(upOn)up.focus();else cardFocus()}
   }else if(a===ib){
     if(U)onTab.focus();
     else if(D)cardFocus();
+    else if(R&&upOn)up.focus();
+  }else if(a===up){
+    if(L&&ibOn)ib.focus();
+    else if(D)cardFocus();
+    else if(U)onTab.focus();
   }else if(ci>=0){
     if(L&&ci>0)cards[ci-1].focus();
     else if(R&&ci<cards.length-1)cards[ci+1].focus();
@@ -241,6 +262,6 @@ document.addEventListener("keydown",function(e){
   }
 });
 
-if(window.Android){Android.loadCatalog()}else{msg("Chạy ngoài ứng dụng Android.")}
+if(window.Android){Android.loadCatalog();try{Android.checkUpdate()}catch(e){}}else{msg("Chạy ngoài ứng dụng Android.")}
 </script>
 </body></html>
