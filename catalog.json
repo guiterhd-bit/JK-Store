@@ -57,6 +57,51 @@
       "desc": "Truyền hình trực tiếp"
     },
     {
+      "name": "ViệtPlay TV",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/vietplay.png",
+      "category": "Truyền Hình",
+      "version": "2.4",
+      "size": "9,3 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/vietplay.apk",
+      "desc": "Truyền hình trực tiếp"
+    },
+    {
+      "name": "Xem TV",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/XemTv.png",
+      "category": "Truyền Hình",
+      "version": "5.8.8",
+      "size": "5,4 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/xemtv.apk",
+      "desc": "Truyền hình trực tiếp"
+    },
+    {
+      "name": "MiHD TV",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/mihdtv56.png",
+      "category": "Truyền Hình",
+      "version": "1.0",
+      "size": "2,2 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/mihdtv56.apk",
+      "desc": "Truyền hình cho Android 5 - 6"
+    },
+    {
+      "name": "SuperOK Player",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/superok.png",
+      "category": "Truyền Hình",
+      "version": "2.9",
+      "size": "59 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/SuperOK.apk",
+      "desc": "Stream IPTV + Smarttube"
+    },
+    {
+      "name": "M3U Player",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/M3u.png",
+      "category": "Truyền Hình",
+      "version": "3.0.11",
+      "size": "10,5 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/m3u.apk",
+      "desc": "Stream IPTV Android 5 - 6"
+    },
+    {
       "name": "SmartTube",
       "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/smarttube.png",
       "category": "YouTube",
