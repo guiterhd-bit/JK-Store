@@ -38,12 +38,12 @@
       "desc": "Youtube Chặn Quảng Cáo"
     },
     {
-      "name": "T34 TV",
-      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/t34.png",
+      "name": "JK Tivi",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/jktivi.jpg",
       "category": "Truyền Hình",
-      "version": "1.0.3",
-      "size": "10.5 MB",
-      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/t34tv.apk",
+      "version": "1.0",
+      "size": "1.5 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/JKTivi.apk",
       "desc": "Truyền hình trực tiếp",
       "favorite": true
     },
