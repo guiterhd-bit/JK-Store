@@ -195,6 +195,16 @@
       "favorite": true
     },
     {
+      "name": "Hiếu Gà Phim",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/hieugaphim.png",
+      "category": "Giải Trí",
+      "version": "3.0.5",
+      "size": "50 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/hieugaphimTV.apk",
+      "desc": "Rạp Phim Miễn Phí",
+      "favorite": true
+    },
+    {
       "name": "Mê Phim",
       "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/mephim.png",
       "category": "Giải Trí",
