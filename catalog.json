@@ -195,24 +195,6 @@
       "favorite": true
     },
     {
-      "name": "Sài Gòn Phim",
-      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/saigonphim.png",
-      "category": "Giải Trí",
-      "version": "1.7",
-      "size": "64,5 MB",
-      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/SaiGonPhim.apk",
-      "desc": "Rạp Phim Miễn Phí"
-    },
-    {
-      "name": "Chợ Phim",
-      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/chophim.png",
-      "category": "Giải Trí",
-      "version": "1.1.0",
-      "size": "3,6 MB",
-      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/chophim.apk",
-      "desc": "Rạp Phim Miễn Phí"
-    },
-    {
       "name": "Mê Phim",
       "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/mephim.png",
       "category": "Giải Trí",
