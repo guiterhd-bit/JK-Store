@@ -1,6 +1,9 @@
 package com.jks.store;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
 import android.app.UiModeManager;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -161,6 +164,48 @@ public class MainActivity extends Activity {
         return f;
     }
 
+    /** Thử lần lượt nhiều màn hình cài đặt; TV Xiaomi nội địa thường thiếu màn hình chuẩn của Android. */
+    private boolean openInstallPermissionScreen() {
+        Intent[] tries = new Intent[] {
+                new Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES, Uri.parse("package:" + getPackageName())),
+                new Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES),
+                new Intent(Settings.ACTION_SECURITY_SETTINGS),
+                new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:" + getPackageName())),
+                new Intent(Settings.ACTION_SETTINGS)
+        };
+        for (Intent i : tries) {
+            try {
+                startActivity(i);
+                return true;
+            } catch (ActivityNotFoundException ignored) {
+            } catch (SecurityException ignored) {
+            } catch (Exception ignored) {
+            }
+        }
+        return false;
+    }
+
+    private void showPermissionDialog() {
+        String msg = "Để cài ứng dụng, cần bật quyền cài đặt cho Kho ứng dụng.\n\n"
+                + "Bấm \"Mở cài đặt\" rồi bật \"Cho phép cài ứng dụng\" / \"Nguồn không xác định\".\n\n"
+                + "Nếu TV không mở được màn hình đó, vào: Cài đặt > Tài khoản và bảo mật > Bảo mật > Cài ứng dụng không rõ nguồn "
+                + "(hoặc cài đặt có tên tương tự), bật cho \"Kho ứng dụng\".\n\n"
+                + "Cách khác (qua ADB):\nadb shell appops set " + getPackageName() + " REQUEST_INSTALL_PACKAGES allow";
+        new AlertDialog.Builder(this)
+                .setTitle("Cần cấp quyền cài đặt")
+                .setMessage(msg)
+                .setPositiveButton("Mở cài đặt", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface d, int w) {
+                        if (!openInstallPermissionScreen()) {
+                            status("TV không mở được cài đặt. Hãy vào Cài đặt > Bảo mật và bật thủ công, hoặc dùng ADB.");
+                        }
+                    }
+                })
+                .setNegativeButton("Đóng", null)
+                .show();
+    }
+
     private class Bridge {
 
         /** true nếu là điện thoại/máy tính bảng cảm ứng (không phải TV hay TV box). */
@@ -230,14 +275,10 @@ public class MainActivity extends Activity {
                 ui.post(new Runnable() {
                     @Override
                     public void run() {
-                        try {
-                            startActivity(new Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES,
-                                    Uri.parse("package:" + getPackageName())));
-                        } catch (Exception ignored) {
-                        }
+                        showPermissionDialog();
                     }
                 });
-                status("Hãy bật \"Cho phép cài ứng dụng\" cho Kho ứng dụng, rồi quay lại và bấm Tải lần nữa.");
+                status("Cần bật quyền \"Cài ứng dụng không rõ nguồn\" cho Kho ứng dụng, rồi bấm Tải lại.");
                 return;
             }
             busy = true;
