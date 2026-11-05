@@ -32,11 +32,11 @@ jobs:
           if [ -z "${{ secrets.KEYSTORE_BASE64 }}" ]; then
             echo "THIẾU SECRET KEYSTORE_BASE64. Hãy làm theo file thông tin khóa ký." ; exit 1
           fi
-          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > "$RUNNER_TEMP/jaky.p12"
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > "$RUNNER_TEMP/jkstore.p12"
 
       - name: Build APK
         env:
-          KS_FILE: ${{ runner.temp }}/jaky.p12
+          KS_FILE: ${{ runner.temp }}/jkstore.p12
           KS_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
@@ -44,17 +44,17 @@ jobs:
         run: gradle assembleDebug --no-daemon
 
       - name: Đặt tên file APK
-        run: cp app/build/outputs/apk/debug/app-debug.apk JakyStore.apk
+        run: cp app/build/outputs/apk/debug/app-debug.apk JKStore.apk
 
       - uses: actions/upload-artifact@v4
         with:
-          name: JakyStore-apk
-          path: JakyStore.apk
+          name: JKStore-apk
+          path: JKStore.apk
 
       - name: Phát hành bản mới (để ứng dụng tự cập nhật)
         uses: softprops/action-gh-release@v2
         with:
           tag_name: build-${{ github.run_number }}
-          name: Jaky Store 1.0.${{ github.run_number }}
-          files: JakyStore.apk
+          name: JK Store 1.0.${{ github.run_number }}
+          files: JKStore.apk
           make_latest: true
