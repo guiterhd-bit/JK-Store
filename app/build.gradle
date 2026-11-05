@@ -50,4 +50,6 @@ android {
 
 dependencies {
     implementation 'androidx.core:core:1.12.0'
+    // Máy khách ADB: cài APK qua ADB nội bộ của TV (127.0.0.1:5555), không cần quyền "nguồn không xác định"
+    implementation 'dev.mobile:dadb:1.2.10'
 }

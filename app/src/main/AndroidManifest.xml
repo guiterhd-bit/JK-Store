@@ -3,6 +3,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <!-- Được cấp qua ADB (lht.sh) để app tự bật ADB nội bộ; không cấp thì app dùng trình cài đặt hệ thống -->
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
 
     <uses-feature android:name="android.software.leanback" android:required="false" />
     <uses-feature android:name="android.hardware.touchscreen" android:required="false" />

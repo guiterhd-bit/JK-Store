@@ -23,6 +23,9 @@ import android.webkit.WebViewClient;
 
 import androidx.core.content.FileProvider;
 
+import dadb.AdbKeyPair;
+import dadb.Dadb;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -90,7 +93,7 @@ public class MainActivity extends Activity {
             c.setConnectTimeout(15000);
             c.setReadTimeout(30000);
             c.setInstanceFollowRedirects(false);
-            c.setRequestProperty("User-Agent", "KhoAppTV/1.0");
+            c.setRequestProperty("User-Agent", "JKStore/1.0");
             int code = c.getResponseCode();
             if (code >= 300 && code < 400) {
                 String loc = c.getHeaderField("Location");
@@ -164,6 +167,42 @@ public class MainActivity extends Activity {
         return f;
     }
 
+    /** Bật ADB (nếu được cấp WRITE_SECURE_SETTINGS) rồi cài APK qua ADB nội bộ của TV. Trả về true nếu cài xong. */
+    private boolean installViaAdb(File apk, String name) {
+        Dadb dadb = null;
+        try {
+            if (getPackageManager().checkPermission("android.permission.WRITE_SECURE_SETTINGS", getPackageName())
+                    == PackageManager.PERMISSION_GRANTED) {
+                try {
+                    Settings.Global.putInt(getContentResolver(), "adb_enabled", 1);
+                } catch (Exception ignored) {
+                }
+            }
+            File priv = new File(getFilesDir(), "adbkey");
+            File pub = new File(getFilesDir(), "adbkey.pub");
+            if (!priv.exists() || !pub.exists()) {
+                AdbKeyPair.generate(priv, pub);
+            }
+            AdbKeyPair keyPair = AdbKeyPair.read(priv, pub);
+            status("Đang cài " + name + " qua ADB… Nếu TV hỏi cho phép gỡ lỗi USB, hãy chọn \"Luôn cho phép\".");
+            dadb = Dadb.create("127.0.0.1", 5555, keyPair);
+            dadb.install(apk, "-r");
+            status("Đã cài xong " + name);
+            return true;
+        } catch (Throwable t) {
+            // ADB chưa bật / bị từ chối / lỗi cài: dùng trình cài đặt hệ thống
+            status("Không cài được qua ADB, chuyển sang trình cài đặt hệ thống…");
+            return false;
+        } finally {
+            if (dadb != null) {
+                try {
+                    dadb.close();
+                } catch (Exception ignored) {
+                }
+            }
+        }
+    }
+
     /** Thử lần lượt nhiều màn hình cài đặt; TV Xiaomi nội địa thường thiếu màn hình chuẩn của Android. */
     private boolean openInstallPermissionScreen() {
         Intent[] tries = new Intent[] {
@@ -186,10 +225,10 @@ public class MainActivity extends Activity {
     }
 
     private void showPermissionDialog() {
-        String msg = "Để cài ứng dụng, cần bật quyền cài đặt cho Kho ứng dụng.\n\n"
+        String msg = "Để cài ứng dụng, cần bật quyền cài đặt cho JK Store.\n\n"
                 + "Bấm \"Mở cài đặt\" rồi bật \"Cho phép cài ứng dụng\" / \"Nguồn không xác định\".\n\n"
                 + "Nếu TV không mở được màn hình đó, vào: Cài đặt > Tài khoản và bảo mật > Bảo mật > Cài ứng dụng không rõ nguồn "
-                + "(hoặc cài đặt có tên tương tự), bật cho \"Kho ứng dụng\".\n\n"
+                + "(hoặc cài đặt có tên tương tự), bật cho \"JK Store\".\n\n"
                 + "Cách khác (qua ADB):\nadb shell appops set " + getPackageName() + " REQUEST_INSTALL_PACKAGES allow";
         new AlertDialog.Builder(this)
                 .setTitle("Cần cấp quyền cài đặt")
@@ -271,22 +310,20 @@ public class MainActivity extends Activity {
                 status("Đang tải, vui lòng đợi…");
                 return;
             }
-            if (Build.VERSION.SDK_INT >= 26 && !getPackageManager().canRequestPackageInstalls()) {
-                ui.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        showPermissionDialog();
-                    }
-                });
-                status("Cần bật quyền \"Cài ứng dụng không rõ nguồn\" cho Kho ứng dụng, rồi bấm Tải lại.");
-                return;
-            }
+            // Không chặn theo canRequestPackageInstalls(): một số ROM Xiaomi nội địa báo false dù đã cấp quyền
+            // qua ADB. Cứ tải và mở trình cài đặt; nếu hệ thống thật sự từ chối thì mới hiện hướng dẫn.
+            final boolean maybeNoPerm = Build.VERSION.SDK_INT >= 26
+                    && !getPackageManager().canRequestPackageInstalls();
             busy = true;
             new Thread(new Runnable() {
                 @Override
                 public void run() {
                     try {
                         File f = download(url, name);
+                        // Ưu tiên cài qua ADB nội bộ (không cần cấp quyền); lỗi thì quay về trình cài đặt hệ thống
+                        if (installViaAdb(f, name)) {
+                            return;
+                        }
                         status("Đã tải xong. Đang mở màn hình cài đặt…");
                         Uri uri;
                         if (Build.VERSION.SDK_INT >= 24) {
@@ -301,7 +338,16 @@ public class MainActivity extends Activity {
                         ui.post(new Runnable() {
                             @Override
                             public void run() {
-                                MainActivity.this.startActivity(i);
+                                try {
+                                    MainActivity.this.startActivity(i);
+                                } catch (Exception ex) {
+                                    status("Không mở được trình cài đặt: " + ex.getMessage());
+                                    showPermissionDialog();
+                                    return;
+                                }
+                                if (maybeNoPerm) {
+                                    status("Nếu trình cài đặt không hiện, hãy bật quyền cài ứng dụng cho JK Store.");
+                                }
                             }
                         });
                     } catch (Exception e) {

@@ -3,3 +3,10 @@
 -keepclassmembers class com.jks.store.MainActivity$Bridge {
     @android.webkit.JavascriptInterface <methods>;
 }
+
+# Thư viện ADB (dadb) và các phụ thuộc của nó
+-keep class dadb.** { *; }
+-dontwarn dadb.**
+-dontwarn okio.**
+-dontwarn kotlin.**
+-dontwarn org.jetbrains.annotations.**

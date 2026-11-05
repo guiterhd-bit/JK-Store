@@ -1,4 +1,4 @@
-# Kho ứng dụng TV
+# JK Store
 
 1. Sửa `catalog_url` trong `app/src/main/res/values/strings.xml` thành link raw của `catalog.json`.
 2. Mỗi lần bạn sửa file trên GitHub, tab Actions sẽ tự build lại APK.
