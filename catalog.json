@@ -173,7 +173,6 @@
       "size": "26,1 MB",
       "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/LauTV.apk",
       "desc": "Bóng Đá Nhà Cái",
-      "favorite": true
     },
     {
       "name": "SportzX",
@@ -210,7 +209,7 @@
       "version": "3.0.5",
       "size": "50 MB",
       "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/hieugaphimTV.apk",
-      "desc": "Xem Phim Miễn Phí",
+      "desc": "Xem Phim Miễn Phí"
     },
     {
       "name": "Film4K",
@@ -219,7 +218,7 @@
       "version": "1.1.3",
       "size": "35 MB",
       "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/Film4k.apk",
-      "desc": "Xem Phim Miễn Phí"
+      "desc": "Xem Phim Miễn Phí",
       "favorite": true
     },
     {
