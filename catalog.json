@@ -147,6 +147,16 @@
       "desc": "Truyền Hình FPT"
     },
     {
+      "name": "MHD Sports",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/mhd-sports.png",
+      "category": "Thể Thao",
+      "version": "1.0",
+      "size": "8 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/misp.apk",
+      "desc": "Bóng Đá Nhà Cái",
+      "favorite": true
+    },
+    {
       "name": "Get Out",
       "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/getout.png",
       "category": "Thể Thao",
@@ -154,7 +164,6 @@
       "size": "15 MB",
       "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/getout.apk",
       "desc": "Bóng Đá Nhà Cái",
-      "favorite": true
     },
     {
       "name": "Lậu TV",
@@ -185,12 +194,12 @@
       "desc": "Thể Thao Quốc Tế"
     },
     {
-      "name": "Phim 4K",
-      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/phim4k.png",
+      "name": "Chợ Phim",
+      "icon": "https://raw.githubusercontent.com/guiterhd-bit/thumbnails/main/chophim.png",
       "category": "Giải Trí",
       "version": "2.7.3",
-      "size": "13,4 MB",
-      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/phim4k.apk",
+      "size": "4 MB",
+      "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/chophim.apk",
       "desc": "Xem Phim Miễn Phí",
       "favorite": true
     },
@@ -202,7 +211,6 @@
       "size": "50 MB",
       "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/hieugaphimTV.apk",
       "desc": "Xem Phim Miễn Phí",
-      "favorite": true
     },
     {
       "name": "Film4K",
@@ -212,6 +220,7 @@
       "size": "35 MB",
       "url": "https://github.com/guiterhd-bit/kho-apps/raw/refs/heads/main/Film4k.apk",
       "desc": "Xem Phim Miễn Phí"
+      "favorite": true
     },
     {
       "name": "Mê Phim",
